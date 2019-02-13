@@ -129,6 +129,8 @@ function checkDates(){
 						{maxDate: formatDate(myDateFormat, newdate)});
 					$('#datepicker2').datepicker("change",
 							{maxDate: formatDate(myDateFormat, newdate)});
+					// If we have no current date, don't show the modal
+					if (appstate.date != null){
 					$('#newdate-thedate').html(formatDate(myDateFormat,
 														newdate));
 				    $( "#newdate-message" ).dialog({
@@ -150,7 +152,14 @@ function checkDates(){
 				                $( this ).dialog( "close" );
 				              }
 				        }]
-				      });
+							});
+						} else {
+							setDate(
+								appstate.lastdate.getFullYear(),
+								appstate.lastdate.getMonth()+1,
+								appstate.lastdate.getDate()
+							);
+						}
 				}				
 			}
 			
@@ -256,7 +265,7 @@ function updateDetails(huc12){
 	$('#details_hidden').css('display', 'none');
 	$('#details_details').css('display', 'none');
 	$('#details_loading').css('display', 'block');
-    $.get('nextgen-details.php', {
+    $.get(BACKEND + '/huc12-details.php', {
     	huc12: huc12,
 		date: formatDate("yy-mm-dd", appstate.date),
 		date2: formatDate("yy-mm-dd", appstate.date2)
