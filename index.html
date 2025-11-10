@@ -16,12 +16,12 @@
     <meta name="twitter:creator" content="@dailyerosion">
     <meta name="twitter:image:width" content="85">
     <meta name="twitter:image:height" content="65">
-  <script type="module" crossorigin src="/map/assets/index-CCKQLdDG.js"></script>
+  <script type="module" crossorigin src="/map/assets/index-B86CfG0D.js"></script>
   <link rel="stylesheet" crossorigin href="/map/assets/index-D0aTKvDg.css">
 </head>
 <body>
 
-    <!-- Modals -->
+<!-- Modals -->
 <div class="modal fade" id="newdate-message" tabindex="-1" role="dialog" aria-labelledby="newdateModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -165,7 +165,10 @@
          <i class="bi-list"></i></button>
         </div>
         <div class="col-2 col-md-1">
-            <a href="/"><img src="/map/assets/deplogo-DBgY61BE.png" height="50"></a>
+            <a href="/">
+                <img src="/map/assets/deplogo-DBgY61BE.png" height="50" class="d-md-none" alt="DEP Logo">
+                <img src="/map/assets/deplogo_large-CRvuc7eh.png" height="50" class="d-none d-md-inline" alt="DEP Logo">
+            </a>
         </div>
         <!-- show this button on mobile -->
         <div class="col-8 col-md-3">
@@ -323,9 +326,9 @@
 </div>
 
 <div style="display: none;" id="setdate">
-    <a class="btn btn-secondary" role="button" href="#">
+    <button class="btn btn-secondary" type="button" id="settoday">
         <i class="bi-calendar"></i> Set Date
-    </a>
+    </button>
 </div>
 
 <h4>View Outputs: <button data-action="decrease-opacity" class="btn btn-secondary" type="button" title="Decrease Opacity"><i class="bi-brightness-high"></i> -</button>
